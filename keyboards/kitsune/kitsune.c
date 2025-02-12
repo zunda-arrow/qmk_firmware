@@ -5,7 +5,8 @@
 // SPDX-License-Identifier: GPL-2.0+
 
 #include "quantum.h"
-#include "features/achordion.h"
+#define TAPPING_TERM 170
+#define TAPPING_TERM_PER_KEY
 
 #ifdef SWAP_HANDS_ENABLE
 __attribute__ ((weak))
@@ -22,15 +23,4 @@ const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
     {{1, 3}, {0, 3}, {2, 3}, {3, 3}, {4, 3}}
 };
 #endif
-
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_achordion(keycode, record)) { return false; }
-  // Your macros ...
-
-  return true;
-}
-
-void housekeeping_task_user(void) {
-  achordion_task();
-}
 
