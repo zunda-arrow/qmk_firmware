@@ -5,8 +5,6 @@
 // SPDX-License-Identifier: GPL-2.0+
 
 #include "quantum.h"
-#define TAPPING_TERM 170
-#define TAPPING_TERM_PER_KEY
 
 #ifdef SWAP_HANDS_ENABLE
 __attribute__ ((weak))
